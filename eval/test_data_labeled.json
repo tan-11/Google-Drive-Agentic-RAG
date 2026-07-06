@@ -1,0 +1,502 @@
+[
+    {
+        "question": "What is the Basic Pay amount listed in the EARNINGS section of the payslip?",
+        "ground_truth": "1,800.00",
+        "reference_chunk_id": "1NrJiupXoBfoTsxIVfT_CgXc4Gis7D0Xu:f8b776c20d38cea59a0f1042"
+    },
+    {
+        "question": "What is the Basic Pay amount listed in the Earnings section of Peng Rong Tan's final payslip for May 2026?",
+        "ground_truth": "1,800.00",
+        "reference_chunk_id": "1xN-QXl7ZVn9Fbv1k_crPckXrkbQq7YTO:503b75967bcff3f806667397"
+    },
+    {
+        "question": "What is the basic pay amount listed in the earnings section of the payslip for Peng Rong Tan?",
+        "ground_truth": "1,800.00",
+        "reference_chunk_id": "1yJ29bCF7E8_Yl5GbVlfKe03xTVLx4992:66a7dd12655e1ce8ace040bd"
+    },
+    {
+        "question": "According to the assumptions, which group of people is seated in the area?",
+        "ground_truth": "Guests",
+        "reference_chunk_id": "1lVFkDfkNIDpdu5Tt4gja2Xrcd-HWEAILnK93WnumAfY:c8506b61ecb904ce122e3d1e"
+    },
+    {
+        "question": "What is the name of the person who received the AWS Academy Graduate - Cloud Architecting - Training Badge?",
+        "ground_truth": "Tan Peng Rong",
+        "reference_chunk_id": "1P6ApoZnwQWHTmWxJWdpqBjsBc_br4g0r:490eb811a02acc4ecfcb4336"
+    },
+    {
+        "question": "What is the filename of the document provided?",
+        "ground_truth": "SPM_cert.pdf",
+        "reference_chunk_id": "1DaBCuwNKEfDQdw9OnONRbPQT69tInzB9:d10dcf66d08ee34e2bb9fddf"
+    },
+    {
+        "question": "What is the GPA achieved by TAN PENG RONG in the terminating session of 202405?",
+        "ground_truth": "3.8500",
+        "reference_chunk_id": "1HyMC2XraNZXqD5bvXPzrO5yYGPfxAO42:5c99657e5fcb2a56d2b19484"
+    },
+    {
+        "question": "What is the course code for Korean Language I?",
+        "ground_truth": "BHKL1013",
+        "reference_chunk_id": "1HyMC2XraNZXqD5bvXPzrO5yYGPfxAO42:885cb9bf6576e49a17b3f9ef"
+    },
+    {
+        "question": "What is the CGPA listed at the end of the second semester section?",
+        "ground_truth": "3.8047",
+        "reference_chunk_id": "1HyMC2XraNZXqD5bvXPzrO5yYGPfxAO42:50d4aa23bc12393e9cbe36f9"
+    },
+    {
+        "question": "Through which platform must an appeal for the review of final results (FAIL/PASS courses) be made?",
+        "ground_truth": "Student Intranet",
+        "reference_chunk_id": "1HyMC2XraNZXqD5bvXPzrO5yYGPfxAO42:d1af106dc53c6c85493a70fa"
+    },
+    {
+        "question": "What is the minimum MUET band score required for Bachelor degree students to have their graduation status considered?",
+        "ground_truth": "Band 3",
+        "reference_chunk_id": "1HyMC2XraNZXqD5bvXPzrO5yYGPfxAO42:392430c6bebad07708c8cc2e"
+    },
+    {
+        "question": "How long does MHA Consultancy Services Sdn Bhd retain the personal data of unsuccessful applicants?",
+        "ground_truth": "Up to 24 months",
+        "reference_chunk_id": "1vssYP7yLeezHruxpb0ZimGf1WWD3T-VW:5a1c640fd0caa9a1c8d4f80c"
+    },
+    {
+        "question": "How long does MHA Consultancy Services Sdn Bhd retain the personal data of unsuccessful applicants?",
+        "ground_truth": "Up to 24 months",
+        "reference_chunk_id": "1vssYP7yLeezHruxpb0ZimGf1WWD3T-VW:08d8464a933e680f0845d309"
+    },
+    {
+        "question": "Which specific agency is mentioned for conducting background checks and credit reports?",
+        "ground_truth": "CTOS",
+        "reference_chunk_id": "1vssYP7yLeezHruxpb0ZimGf1WWD3T-VW:0e46f5330b19f3c21670bd2d"
+    },
+    {
+        "question": "Berapa tempoh masa MHA Consultancy Services Sdn Bhd menyimpan data peribadi calon yang tidak berjaya untuk pertimbangan peluang kerja akan datang?",
+        "ground_truth": "24 bulan",
+        "reference_chunk_id": "1vssYP7yLeezHruxpb0ZimGf1WWD3T-VW:000fcc0589fae5cc890f6c2f"
+    },
+    {
+        "question": "What specific legislation is mentioned for the storage and processing of personal data in the document?",
+        "ground_truth": "Akta Perlindungan Data Peribadi 2010 (PDPA)",
+        "reference_chunk_id": "1vssYP7yLeezHruxpb0ZimGf1WWD3T-VW:33b257c80e145869e8e9a6f0"
+    },
+    {
+        "question": "What is the name of the file referenced in the document chunk?",
+        "ground_truth": "resume.pdf",
+        "reference_chunk_id": "1lgHqs9Ci66EfA-NYvQKzhvoAKuyZGonp:d195f4a7938db4ce4701b782"
+    },
+    {
+        "question": "What programming languages and frameworks are mentioned as being used to develop LLM-powered applications, recommender systems, computer vision solutions, and automation platforms?",
+        "ground_truth": "Python, FastAPI, Docker, and PostgreSQ",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:be05b0c30cbb5f71a60f6d93"
+    },
+    {
+        "question": "What skills were developed during the IT Support role at Smart Five System Sdn. Bhd.?",
+        "ground_truth": "Hardware Support, Troubleshooting, Attention to Detail, Teamwork",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:d2b07b7e73d867580e008936"
+    },
+    {
+        "question": "What is the CGPA listed for the Diploma in Information Technology?",
+        "ground_truth": "3.7",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:a7531fc1669f63c135d5545f"
+    },
+    {
+        "question": "What is the CGPA of Tan Peng Rong?",
+        "ground_truth": "3.8",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:8a1448e0172809e469479300"
+    },
+    {
+        "question": "What university did the individual attend between 2024 and 2026?",
+        "ground_truth": "Tunku Abdul Rahman University Of Management And Technology",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:2224bd33dd519f8c28dfb1df"
+    },
+    {
+        "question": "What specific task did the Software Engineering Intern at B2B EGSSDn. Bhd. perform regarding the C++-based EDI document translation system?",
+        "ground_truth": "Migrated the C++-based EDI document translation system from legacy to new environments, ensuring stable and accurate output.",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:c127bb1dc0e3856e1905c702"
+    },
+    {
+        "question": "What technologies were used to develop the automated end-to-end testing framework?",
+        "ground_truth": "Python, Selenium, and BeautifulSoup",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:bebf4eb465e819bc77df1044"
+    },
+    {
+        "question": "What skills were developed during the research and prompting engineering for LLMs to extract structured data from complex business documents?",
+        "ground_truth": "C++, Python, Automation, Debugging, Software Life-Cycle, Prompt Engineering, Project Management",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:c14772d01678df7fa01e81bc"
+    },
+    {
+        "question": "What specific capability does the self-healing query execution workflow implement regarding SQL errors?",
+        "ground_truth": "It is capable of automatically detecting SQL errors, analyzing failure causes, generating corrected queries, and re-executing them without manual intervention.",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:bd3dc3b2098618aa5d49be4d"
+    },
+    {
+        "question": "What technology was used to develop embedding-based schema retrieval?",
+        "ground_truth": "pgvector",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:0734929b0047e81951f8a2b7"
+    },
+    {
+        "question": "Which technologies were used to develop the scalable backend services?",
+        "ground_truth": "FastAPI and Redis",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:d8158cf0d36003824c1fc242"
+    },
+    {
+        "question": "What specific features does the interactive web interface provide for end users?",
+        "ground_truth": "Explainable query generation, error diagnostics, query correction reasoning, and structured result visualization.",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:424341359deef863369ce80f"
+    },
+    {
+        "question": "By approximately what percentage did the system reduce SQL debugging and manual query correction effort?",
+        "ground_truth": "approximately 80 %",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:b234e34dfeb718eb06ccea20"
+    },
+    {
+        "question": "What web framework was used to design and develop the Automated Data Engineering Sandbox Platform?",
+        "ground_truth": "Flask",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:4a7ea457f3f0718d59cedfb3"
+    },
+    {
+        "question": "What technology was leveraged to provide secure multi-environment containerization?",
+        "ground_truth": "Docker",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:ed095854bc8e1b70e6cf5164"
+    },
+    {
+        "question": "What technology was leveraged to provide secure multi-tenant isolation?",
+        "ground_truth": "Docker containerization",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:ffc57a026c5982fcc268d538"
+    },
+    {
+        "question": "What workflows were implemented to streamline infrastructure operations and reduce administrative overhead?",
+        "ground_truth": "Environment creation, suspension, restart, and decommissioning workflows.",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:767a56fdfde64dbba041a49d"
+    },
+    {
+        "question": "What was the mAP@50 achieved by the trained YOLOv8 model on the project evaluation dataset?",
+        "ground_truth": "98%",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:ad2c2e18066f7688d9d9f7bc"
+    },
+    {
+        "question": "What specific preprocessing techniques were used to improve detection robustness in the LOv8 model?",
+        "ground_truth": "Gamma correction and histogram equalization",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:789b35045bd16ea32c1834df"
+    },
+    {
+        "question": "What Hit@10 and NDCG@10 performance metrics were achieved by the Neural Collaborative Filtering recommender system?",
+        "ground_truth": "~ 59 % Hit @ 1 0 and ~ 34 % N D C G @ 1 0",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:9457d2178e633162fc4d4685"
+    },
+    {
+        "question": "What technology stack was used to develop the real-time recommendation APIs and efficient inference pipelines?",
+        "ground_truth": "PyTorch, Python, FastAPI, Model Evaluation",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:e1350cf8d82ebb8c707d3563"
+    },
+    {
+        "question": "Which programming languages are listed under the 'Programming' skills section?",
+        "ground_truth": "Python, Java, C/C++, SQL",
+        "reference_chunk_id": "1k3lAedl-grCsZJIg0lVmlMj8nLQHMWCY:d724074f8364f85b19668051"
+    },
+    {
+        "question": "What is the name of the student who prepared the Industrial Training Final Report at B2BE GSS SDN. BHD.?",
+        "ground_truth": "Tan Peng Rong",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:eae656548a992f9d0fc08327"
+    },
+    {
+        "question": "Who signed the declaration in the final report?",
+        "ground_truth": "Tan Peng Rong",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:5c1b72bdcf04dc1ce3bd2906"
+    },
+    {
+        "question": "Who is the company supervisor mentioned in the acknowledgements?",
+        "ground_truth": "Ms. Shiau Hui Teong",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:2d41f7634312af0265c318bd"
+    },
+    {
+        "question": "What specific technologies were used to design and develop the autonomous testing script mentioned in the abstract?",
+        "ground_truth": "Python, Selenium, and BeautifulSoup",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:7db1d3e1fe882bde7379f992"
+    },
+    {
+        "question": "What is the total duration of the industrial training scheme mentioned in the document?",
+        "ground_truth": "24 weeks",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:a333b593f651e9b367ab1900"
+    },
+    {
+        "question": "What specific professional roles is the assessment framework designed to prepare the individual for?",
+        "ground_truth": "Professional data scientist and backend engineer",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:adec9556975510fb84b13f1e"
+    },
+    {
+        "question": "What specific programming language was used to design and execute automated validation tools during the internship?",
+        "ground_truth": "Python",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:ebf08a8b3539b1f744666ff2"
+    },
+    {
+        "question": "What specific business documents does B2BE enable organizations to exchange through automated workflows?",
+        "ground_truth": "Purchase orders, invoices, and shipping notices",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:2b50322ee3a071bf376ddb4a"
+    },
+    {
+        "question": "What is the sequence of systematic stages that technical tickets pass through in the Technical and Development Department?",
+        "ground_truth": "Development, internal testing, code reviews, User Acceptance Testing (UAT), and final live deployment.",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:4f52d1b3bb39ad6579dd1c27"
+    },
+    {
+        "question": "Who is the mentor responsible for reviewing daily tasks and providing feedback and guidance?",
+        "ground_truth": "Ms. Hamizah",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:946cdf2032411e1efe5572c8"
+    },
+    {
+        "question": "What specific legacy programming language's translation code did the intern analyze during migration-related activities?",
+        "ground_truth": "C++",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:149dc27de31f65f7fbb0bfc9"
+    },
+    {
+        "question": "What percentage of aesthetic and data similarity did the standardized invoice layout documents aim to achieve against target corporate design sheets?",
+        "ground_truth": "over 90%",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:6ea192aed8e67db911925163"
+    },
+    {
+        "question": "Which two Python libraries were used in the autonomous end-to-end verification script described in Section 2.3?",
+        "ground_truth": "Selenium and BeautifulSoup",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:4baada7c230f904c8fc49983"
+    },
+    {
+        "question": "Which specific file formats did the Python-based comparison engine extend support for in April?",
+        "ground_truth": "TXT, XML, EDIFACT, and the company's proprietary document format types.",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:0f01d46c33d8caec4eebf795"
+    },
+    {
+        "question": "What specific testing method was used to identify discrepancies by running identical source data samples across both legacy and modern servers simultaneously?",
+        "ground_truth": "Parallel E2E execution tests",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:084027d19988bb87aea37e10"
+    },
+    {
+        "question": "What specific types of client documents were used in the testing profiles to ensure robustness across different visual schemas?",
+        "ground_truth": "Purchase orders",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:292e34183d0f396ea364902f"
+    },
+    {
+        "question": "What specific document formats does B2BE GSS SDN. BHD. convert client purchase orders or invoices into?",
+        "ground_truth": "XML or EDIFACT",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:33afe5c848ed08a50a38d1a2"
+    },
+    {
+        "question": "What are the four main daily business activities focused on by B2BE?",
+        "ground_truth": "Managing client onboarding configurations, monitoring active data translation channels for processing errors, upgrading server performance to maintain service level agreements (SLAs), and optimizing automated document reading applications to handle expanding client requirements.",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:d791e7e060525a0754023bf3"
+    },
+    {
+        "question": "What specific activity did the author engage in during their internship related to AI for document extraction?",
+        "ground_truth": "Prompt engineering",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:36f7144ae2dd117017834920"
+    },
+    {
+        "question": "What specific target percentage was mentioned for matching client design specifications while developing customized BIRT invoice reports?",
+        "ground_truth": "90%",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:385685c7021168d8c1479c4b"
+    },
+    {
+        "question": "What specific automation tool did the intern build during their five-month industrial training at B2BE GSS SDN. BHD.?",
+        "ground_truth": "An efficient Python-based end-to-end automation testing script",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:3231bc339c33edc387730566"
+    },
+    {
+        "question": "What specific areas of practical learning does the document recommend incorporating into the Industrial Training Scheme?",
+        "ground_truth": "Software testing, quality assurance, and system maintenance.",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:aa20fa9779dfdba57c6f5e2a"
+    },
+    {
+        "question": "Which publication released the article titled 'Web Scraping using Selenium and BeautifulSoup' by G. Tanner?",
+        "ground_truth": "Towards Data Science",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:cbb2293d7820aee80b4cf154"
+    },
+    {
+        "question": "What section of the document confirms that the record of activities taken by the trainee during industrial training is true?",
+        "ground_truth": "Endorsement by the company\u2019s supervisor",
+        "reference_chunk_id": "1ww0G8E12aon7idTVkg_QZ2ysy36Wvbjv:d31ce496124677e3c1029239"
+    },
+    {
+        "question": "What is the name of the company where Tan Peng Rong completed their industrial training?",
+        "ground_truth": "B2BE GSS SDN. BHD.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:e726c7497be205bd4c397b0a"
+    },
+    {
+        "question": "What is the date written on the declaration section of the final_report_template.docx?",
+        "ground_truth": "08/06/2026",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:94de9f8df60d442db4f9392a"
+    },
+    {
+        "question": "Who is the company supervisor mentioned in the acknowledgements section?",
+        "ground_truth": "Ms. Shiau Hui Teong",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:107e778330e166f4f9236ec5"
+    },
+    {
+        "question": "What is the required word count range for a Degree level report?",
+        "ground_truth": "3,000 to 6,000 words",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:0b4c411514af3de32f7e5714"
+    },
+    {
+        "question": "What specific organizational structure is required to be explained under the 'Structures of organisation/project' section?",
+        "ground_truth": "The structure and activities of the training department.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:8cae4e671b4672d8081da0e2"
+    },
+    {
+        "question": "What are the start and end dates of the internship period covered in the final report?",
+        "ground_truth": "January 26, 2026, to May 29, 2026",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:113d7987bc2f15c561fbd917"
+    },
+    {
+        "question": "What is the corporate mission of B2BE GSS SDN. BHD.?",
+        "ground_truth": "To provide seamless, fully integrated digital solutions that eliminate complexity from global supply chain processes, minimize human manual errors, and maximize data transfer reliability between diverse, multi-format technical systems.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:b5ecfe271951263d88328a57"
+    },
+    {
+        "question": "Who is the Company Supervisor assigned to monitor the trainee's week-to-week technical progress and conduct code assessments?",
+        "ground_truth": "Ms. Shiau Hui Teong",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:c310d3622122e5f887b8205b"
+    },
+    {
+        "question": "What specific Python libraries were used to design the autonomous end-to-end verification script for manual quality assurance validation?",
+        "ground_truth": "Selenium and BeautifulSoup",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:6d9e4a67f6b2f11c30d90c14"
+    },
+    {
+        "question": "Which Python library was used to parse unstructured HTML text outputs and scrape raw string logs?",
+        "ground_truth": "BeautifulSoup",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:28fa53cd95b365466ec914a5"
+    },
+    {
+        "question": "What specific testing method was used to log discrepancy profiles by comparing the legacy and modern servers?",
+        "ground_truth": "Parallel E2E execution tests running identical source data samples across both servers simultaneously.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:37ec693c0a067e4c4ac8339f"
+    },
+    {
+        "question": "What specific output format did the author enforce in the prompt engineering for document scanning automation?",
+        "ground_truth": "Clean, valid JSON formats",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:87136821eebbaad833e311f7"
+    },
+    {
+        "question": "What specific technical skills or examples did the author mention in section 3.4 to demonstrate Product-Market Alignment and Operational Efficiency during their internship?",
+        "ground_truth": "For Product-Market Alignment, the author developed customized BIRT invoice reports matching client specifications with a 90% target. For Operational Efficiency, they designed and implemented a Python automated E2E testing tool.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:f0b3bb6cfb6aeacc2e73f047"
+    },
+    {
+        "question": "What specific tool did the author design and implement to demonstrate how automation lowers operational costs?",
+        "ground_truth": "A Python automated E2E testing tool",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:9e0d222e24ad3767a4b3bbf5"
+    },
+    {
+        "question": "What specific duration did the author's industrial training at B2BE GSS SDN. BHD. last?",
+        "ground_truth": "five months",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:8ba8309725d17eb1435b5b20"
+    },
+    {
+        "question": "Which referencing system is specified for the list of references in the 'final_report_template.docx' document?",
+        "ground_truth": "American Psychological Association (APA)",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:b966bbb9f387413aacc898cf"
+    },
+    {
+        "question": "Who endorses the record of activities taken by the trainee during industrial training?",
+        "ground_truth": "The company\u2019s supervisor",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:f22198f1d3be25c10bb09a7a"
+    },
+    {
+        "question": "Which progress reports must be included in the Appendices section of the final report template?",
+        "ground_truth": "The first 2 months progress reports for a 10-week or 12-week ITP, or the first 5 months progress reports for a 24-week ITP.",
+        "reference_chunk_id": "1kRX--lGvESJYG8w13BYos7c--nch_jZc:3e1339088520aabf9b2a1e94"
+    },
+    {
+        "question": "What programming language was used for the translation code migration and debugging activities in Week 1?",
+        "ground_truth": "C++",
+        "reference_chunk_id": "10LXaoCMb7ctso_94bRUW-aHxOdyPRYK1:741dc68841c18ed3d445fa62"
+    },
+    {
+        "question": "What specific aspects of prompt optimization were emphasized during the third week?",
+        "ground_truth": "Continued refining prompts to improve extraction accuracy, reliability, and consistency of JSON outputs.",
+        "reference_chunk_id": "10LXaoCMb7ctso_94bRUW-aHxOdyPRYK1:348b64b315b7bd95ac9734af"
+    },
+    {
+        "question": "What is the name of the company supervisor who endorsed the leave application?",
+        "ground_truth": "SHIAU HUI TEONG",
+        "reference_chunk_id": "10LXaoCMb7ctso_94bRUW-aHxOdyPRYK1:88eaf6416eca29ad3691bf3f"
+    },
+    {
+        "question": "What specific document formats did the trainee extend the Python script to support during the first week of April 2026?",
+        "ground_truth": "PDF, TXT, XML, EDIFACT, and the company\u2019s proprietary document type.",
+        "reference_chunk_id": "1SuyA9izYA9sXGV2adDJ-6gSY6yalrfq7:fd60742d52e4dcb16c113df4"
+    },
+    {
+        "question": "What specific task did the intern take over from the previous intern senior in the fourth week?",
+        "ground_truth": "The intern took over the previous intern senior's tasks and responsibilities to ensure continuity of ongoing operations and support activities.",
+        "reference_chunk_id": "1SuyA9izYA9sXGV2adDJ-6gSY6yalrfq7:add1d1e29fda1750db4acc64"
+    },
+    {
+        "question": "What is the email address of the company supervisor Shiau Hui Teong?",
+        "ground_truth": "shiauhui.teong@b2be.com",
+        "reference_chunk_id": "1SuyA9izYA9sXGV2adDJ-6gSY6yalrfq7:0f2fcef4f4918287cd37b88b"
+    },
+    {
+        "question": "What specific programming language's code did the trainee analyze to understand the EDI translation workflow?",
+        "ground_truth": "C++",
+        "reference_chunk_id": "1XX7yvST4num0NIObbV0W4kKxBUeh9vMi:bb4c80cee88eeda9bc1d3b5b"
+    },
+    {
+        "question": "What was the primary focus of the work during the fourth week as described in the MARCH_report.pdf?",
+        "ground_truth": "The focus moved towards validation and readiness for production usage.",
+        "reference_chunk_id": "1XX7yvST4num0NIObbV0W4kKxBUeh9vMi:9c8cd6385546f31b23228ece"
+    },
+    {
+        "question": "What is the email address of the company supervisor Shiau Hui Teong?",
+        "ground_truth": "shiauhui.teong@b2be.com",
+        "reference_chunk_id": "1XX7yvST4num0NIObbV0W4kKxBUeh9vMi:b38fda280a95e3a652d74995"
+    },
+    {
+        "question": "What programming languages and tools were utilized to design and develop the autonomous end-to-end testing automation script in Week 2?",
+        "ground_truth": "Python, Selenium, and BeautifulSoup",
+        "reference_chunk_id": "1EH9__2mEG5rC2O-xDm4dMDnnvXHv_fjv:14578ee13187158d045086df"
+    },
+    {
+        "question": "What specific approach was implemented to detect discrepancies in the Python-based PDF comparison tool?",
+        "ground_truth": "A pixel-level comparison approach by converting PDFs into images and performing pixel-by-pixel analysis.",
+        "reference_chunk_id": "1EH9__2mEG5rC2O-xDm4dMDnnvXHv_fjv:65dd33fcf2ba095c65c2e5c7"
+    },
+    {
+        "question": "What is the email address of the company supervisor Shiau Hui Teong?",
+        "ground_truth": "shiauhui.teong@b2be.com",
+        "reference_chunk_id": "1EH9__2mEG5rC2O-xDm4dMDnnvXHv_fjv:36c99712f0d4685845a15b35"
+    },
+    {
+        "question": "What C++ script functionality is described in the training sessions regarding file conversion?",
+        "ground_truth": "The c++ script converts the client file into b2bexml format or b2bexml to receiver format.",
+        "reference_chunk_id": "1eXK7ZSP2ajYiUXxggHS3x4DmVoPLzt1P:1906d95266284a3dd803486c"
+    },
+    {
+        "question": "What is the email address of the company supervisor Shiau Hui Teong?",
+        "ground_truth": "shiauhui.teong@b2be.com",
+        "reference_chunk_id": "1eXK7ZSP2ajYiUXxggHS3x4DmVoPLzt1P:539c207098fda14d345dbfc4"
+    },
+    {
+        "question": "What section of the final report template contains instructions for describing business opportunities and entrepreneurial skills?",
+        "ground_truth": "Chapter 3: Business Opportunities",
+        "reference_chunk_id": "1pezWq_3uHS8xhDlf2m87iLmKIUI97nEW:dd0f8fee86c9444ab18f3c2a"
+    },
+    {
+        "question": "What section of the document is designated for stating opinions on industry experiences, future expectations, and recommendations regarding the Industrial Training scheme?",
+        "ground_truth": "Chapter 4: Conclusions & Recommendations",
+        "reference_chunk_id": "1pezWq_3uHS8xhDlf2m87iLmKIUI97nEW:d4c0db48eb6e39bd5e3f9f17"
+    },
+    {
+        "question": "What specific task did the individual execute regarding laptop software according to the IT Support section?",
+        "ground_truth": "Executed laptop software upgrade and deployment preparation",
+        "reference_chunk_id": "1SehwlKOdQcOGZordRQgEZrWekkxWRqTi:ad5fe3f819bdf04c2449a83d"
+    },
+    {
+        "question": "What was the CGPA achieved in the Diploma in Information Technology?",
+        "ground_truth": "3.7",
+        "reference_chunk_id": "1SehwlKOdQcOGZordRQgEZrWekkxWRqTi:211a498d48673bbde9acd668"
+    },
+    {
+        "question": "What is the CGPA listed for the Bachelor in Data Science of Computer Science degree?",
+        "ground_truth": "3.8",
+        "reference_chunk_id": "1SehwlKOdQcOGZordRQgEZrWekkxWRqTi:cb7a3791549cc7a74120a192"
+    }
+]
