@@ -48,14 +48,20 @@ Google Drive RAG is a lightweight retrieval-augmented generation (RAG) applicati
 
 ## Index your Google Drive documents
 
-Run the ingestion script to crawl Drive files, chunk them, and build the local index:
+For first run, run the ingestion script to crawl Drive files, chunk them, and build the local index:
 
 ```bash
-uv run python -m app.drive.connect
+uv run python -m app.drive.init_data
 ```
 
 This will populate the SQLite database and Chroma index used by the retrieval pipeline.
-The sync function will be implemented in next update version.
+
+## Sync data with google drive files
+
+```bash
+uv run python -m app.drive.sync_files
+```
+The data will sync every 1 minute by running this script.
 
 ## Run the application
 
