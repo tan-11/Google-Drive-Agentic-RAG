@@ -16,13 +16,6 @@ from app.domain import DocumentChunk, ExtractedSection
 
 _encoder = tiktoken.get_encoding("cl100k_base")
 
-def _count_tokens(text: str) -> int:
-    return len(_encoder.encode(text))
-
-def _token_slice(text: str, start: int, max_tokens: int) -> str:
-    tokens = _encoder.encode(text)
-    return _encoder.decode(tokens[start:start + max_tokens])
-
 def _clean_text(text: str) -> str:
     text = text.replace("\x00", " ")
     text = re.sub(r"\r\n?", "\n", text)
@@ -158,7 +151,7 @@ def build_chunks(
     mime_type: str,
     source_url: str | None,
     content: bytes,
-    chunk_size: int = 400,          # tokens 
+    chunk_size: int = 500,          # tokens 
     chunk_overlap: int = 80,        # tokens
 ) -> list[DocumentChunk]:
 
@@ -198,6 +191,7 @@ def build_chunks(
 
                     metadata={
                         k: v for k, v in {
+                            "file_id": file_id,
                             "page_number": section.page_number,
                             "sheet_name": section.sheet_name,
                             "section_heading": section.section_heading,

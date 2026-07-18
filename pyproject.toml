@@ -18,6 +18,7 @@ dependencies = [
     "pandas>=3.0.3",
     "pydantic-settings>=2.14.2",
     "pypdf>=6.14.2",
+    "pytest>=9.1.1",
     "python-docx>=1.2.0",
     "sentence-transformers>=5.6.0",
     "streamlit>=1.58.0",
@@ -27,4 +28,5 @@ dependencies = [
     "torchaudio>=2.11.0",
     "torchvision>=0.27.1",
     "transformers>=5.12.1",
+    "vulture>=2.16",
 ]

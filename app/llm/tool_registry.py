@@ -24,11 +24,11 @@ TOOL_DEFINITIONS = [
                     },
                     "k": {
                         "type": "integer",
-                        "description": "define the number of chunks return",
+                        "description": "define the number of document chunks return",
                         "default": 10
                     }
                 },
-                "required": ["query"]
+                "required": ["query", "k"]
             }
         }
     },

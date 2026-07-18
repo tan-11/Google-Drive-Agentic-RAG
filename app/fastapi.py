@@ -24,3 +24,4 @@ def list_chats():
 @app.get("/chats/{chat_id}")
 def get_chat(chat_id: str):
     return db_client.get_conversation_history(chat_id)  # return ordered messages
+

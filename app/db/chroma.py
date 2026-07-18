@@ -8,10 +8,10 @@ class Chroma:
 
         self.collection = self.client.get_or_create_collection("all-my-documents")
 
-    def add(self, documents: list[str], embeddings: list[list], metadatas : list[dict], ids: list[str]):
-        self.collection.add(
+    def upsert(self, documents: list[str], embeddings: list[list], metadatas : list[dict], ids: list[str]):
+        self.collection.upsert(
             ids = ids,
-            documents= documents,
+            documents = documents,
             embeddings = embeddings,
             metadatas = metadatas
         )
@@ -22,3 +22,20 @@ class Chroma:
             n_results=n_results
         )
         return results
+    
+    def delete_rows_by_fileid(self, file_id:str):
+        return self.collection.delete(
+            where={"file_id": {"$eq": file_id}}
+        )
+
+    #testing
+    def get_all_rows(self):
+        results = self.collection.get(limit=10, include=["documents", "metadatas", "embeddings"] )
+        for idx in range(len(results['ids'])):
+            print(idx, ": \n", 
+                  results['embeddings'][idx], "\n", 
+                  results['documents'][idx], "\n",
+                  results['metadatas'][idx])
+        rows_count = self.collection.count()
+        print("Total rows: ", rows_count)
+

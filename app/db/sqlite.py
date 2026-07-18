@@ -49,6 +49,11 @@ class DB:
                 content TEXT
             );
 
+            CREATE TABLE IF NOT EXISTS app_state (
+                key TEXT PRIMARY KEY,
+                value TEXT                   
+            );
+            
             CREATE INDEX IF NOT EXISTS idx_chunks_file_id
             ON chunks(file_id);
                                
@@ -79,22 +84,33 @@ class DB:
                 ),
             )
 
-    def insert_chunk(self, chunk, hash_value,file_id, index):
+    def insert_chunk(self, chunk, hash_value, file_id, index):
         with self._connect() as conn:
-            conn.execute(
-                """
-                INSERT OR IGNORE INTO chunks (chunk_id, file_id, chunk_index, chunk_text, content_hash)
-                VALUES (?, ?, ?, ?, ?)
-                """,
-                (
-                    chunk.chunk_id,
-                    file_id,
-                    index,
-                    chunk.text,
-                    hash_value,
-                ),
-            )
-
+            try:
+                conn.execute(
+                    """
+                    INSERT INTO chunks (chunk_id, file_id, chunk_index, chunk_text, content_hash)
+                    VALUES (?, ?, ?, ?, ?)
+                    """,
+                    (
+                        chunk.chunk_id,
+                        file_id,
+                        index,
+                        chunk.text,
+                        hash_value,
+                    ),
+                )
+                return True
+            except sqlite3.IntegrityError as e:
+                # Log duplicate content hash or chunk ID
+                print(f"[DEBUG] Skipping duplicate chunk: {chunk.chunk_id} - {str(e)}")
+                return False
+        
+    def update_page_token(self, page_token: str):
+        query = "REPLACE INTO app_state (value, key) VALUES (?,?)"
+        with self._connect() as conn:
+            conn.execute(query, (page_token, 'start_page_token'))
+            
     def check_id_exists(self, table_name, record_id):
         query = f"SELECT EXISTS(SELECT 1 FROM {table_name} WHERE file_id = ?)"
         with self._connect() as conn:
@@ -132,7 +148,28 @@ class DB:
 
         return result
 
+    def get_app_state(self, key: str):
+        query = "SELECT value FROM app_state WHERE key = ?"
+        with self._connect() as conn:
+            cursor = conn.execute(query, (key, ))
+            result = cursor.fetchone()
+        
+        if result:
+            return result[0]
+        return None
 
+    def delete_file_n_chunk(self, file_id):
+        query_table = "DELETE FROM files WHERE file_id = ?"
+        query_chunk = "DELETE FROM chunks WHERE file_id = ?"
+        with self._connect() as conn:
+            conn.execute(query_chunk, (file_id, ))
+            conn.execute(query_table, (file_id, ))
+
+    def delete_chunk(self, chunk_id):
+        query = "DELETE FROM chunks WHERE chunk_id = ?"
+        with self._connect() as conn:
+            conn.execute(query, (chunk_id, ))
+            
     # ======================= LLM conversation ========================
 
     def check_chat_id_exists(self, chat_id: str) -> bool:

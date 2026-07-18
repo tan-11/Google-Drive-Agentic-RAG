@@ -23,6 +23,7 @@ def _get_files_recursive(service, folder_id="root"):
     while True:
         results = service.files().list(
             q=f"'{folder_id}' in parents",
+            pageSize=1000,
             fields="nextPageToken, files(id, name, mimeType, modifiedTime, webViewLink, trashed)",
             pageToken = page_token
         ).execute()
@@ -39,6 +40,31 @@ def _get_files_recursive(service, folder_id="root"):
         if not page_token:
             break
 
+def read_byte(mimeType: str, file_id: str, drive_service) -> str:
+    if mimeType == "application/vnd.google-apps.document":
+        content = drive_service.files().export_media(
+            fileId=file_id,
+            mimeType="text/plain"
+        ).execute()
+
+    elif mimeType == "application/vnd.google-apps.spreadsheet":
+        content = drive_service.files().export_media(
+            fileId=file_id,
+            mimeType="text/csv"
+        ).execute()
+
+    elif mimeType == "application/vnd.google-apps.presentation":
+        content = drive_service.files().export_media(
+            fileId=file_id,
+            mimeType="application/pdf"
+        ).execute()
+    else:
+        content = drive_service.files().get_media(
+            fileId=file_id
+        ).execute()
+
+    return content
+
 def db_init(settings: Settings, db_client: DB, documentToRead: list["str"]):
     drive_service = google_auth.build_drive_service(settings)
     if drive_service is None:
@@ -47,10 +73,8 @@ def db_init(settings: Settings, db_client: DB, documentToRead: list["str"]):
 
     chroma_client = Chroma()
 
-    
-
     for file in _get_files_recursive(drive_service):
-       
+        
         file_id = file['id']
         mimeType = file['mimeType']
         name = file['name']
@@ -73,50 +97,33 @@ def db_init(settings: Settings, db_client: DB, documentToRead: list["str"]):
 
         if mimeType in documentToRead:
             
-            if mimeType == "application/vnd.google-apps.document":
-                content = drive_service.files().export_media(
-                    fileId=file_id,
-                    mimeType="text/plain"
-                ).execute()
-
-            elif mimeType == "application/vnd.google-apps.spreadsheet":
-                content = drive_service.files().export_media(
-                    fileId=file_id,
-                    mimeType="text/csv"
-                ).execute()
-
-            elif mimeType == "application/vnd.google-apps.presentation":
-                content = drive_service.files().export_media(
-                    fileId=file_id,
-                    mimeType="application/pdf"
-                ).execute()
-            else:
-                content = drive_service.files().get_media(
-                    fileId=file_id
-                ).execute()
+            byte_content = read_byte(mimeType=mimeType, file_id=file_id, drive_service=drive_service)
             
-            if not content or not content.strip():
-                print("skip")
-                continue
                 
-            chunks = chunking.build_chunks(file_id=file_id, file_name = name, mime_type = mimeType, content = content, source_url=None)
+            chunks = chunking.build_chunks(file_id=file_id, file_name = name, mime_type = mimeType, content = byte_content, source_url=None)
             
             if not chunks[0].text or not chunks[0].text.strip():
-                print("skip")
+                print("no content, skip")
                 continue
 
+            db_client.upsert_file(file)
             for i , chunk in enumerate(chunks):
                 hash_value = generate_hash(chunk.text)
-                db_client.upsert_file(file)
-                db_client.insert_chunk(chunk = chunk, hash_value = hash_value, index = i+1, file_id = file_id)
-                embeddings = embed_text(chunk.text, settings)
+                inserted = db_client.insert_chunk(chunk = chunk, hash_value = hash_value, index = i+1, file_id = file_id)
+                
+                # Only upsert to Chroma if successfully inserted in SQLite
+                if inserted:
+                    embeddings = embed_text(chunk.text, settings)
+                    chroma_client.upsert(
+                        ids=[chunk.chunk_id],
+                        documents=[chunk.text],
+                        embeddings=embeddings,
+                        metadatas=[chunk.metadata],
+                    )
 
-                chroma_client.add(
-                    ids=[chunk.chunk_id],
-                    documents=[chunk.text],
-                    embeddings=embeddings,
-                    metadatas=[chunk.metadata],
-                )
+    print("End of drive file...")
+    startPageToken = drive_service.changes().getStartPageToken().execute()
+    return startPageToken
 
 if __name__ == "__main__":
     settings = get_settings()
@@ -138,4 +145,6 @@ if __name__ == "__main__":
         # Plain text documents
         "text/plain",
     ]
-    db_init(settings, db_client, documentToRead)
+    startPageToken = db_init(settings, db_client, documentToRead)
+    db_client.update_page_token(startPageToken['startPageToken'])
+    print(f"Completed all... Start Page Token saved ({startPageToken['startPageToken']})...")
