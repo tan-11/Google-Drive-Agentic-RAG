@@ -22,6 +22,30 @@ class Chroma:
             n_results=n_results
         )
         return results
+
+    def get_chunks_by_ids(self, chunk_ids: list[str]) -> list[dict]:
+        if not chunk_ids:
+            return []
+
+        result = self.collection.get(
+            ids=chunk_ids,
+            include=["documents", "metadatas"],
+        )
+
+        chunk_rows: list[dict] = []
+        documents = result.get("documents") or []
+        metadatas = result.get("metadatas") or []
+
+        for index, chunk_id in enumerate(result.get("ids", [])):
+            chunk_rows.append(
+                {
+                    "chunk_id": chunk_id,
+                    "chunk_text": documents[index] if index < len(documents) else "",
+                    "metadata": metadatas[index] if index < len(metadatas) else {},
+                }
+            )
+
+        return chunk_rows
     
     def delete_rows_by_fileid(self, file_id:str):
         return self.collection.delete(
@@ -38,4 +62,3 @@ class Chroma:
                   results['metadatas'][idx])
         rows_count = self.collection.count()
         print("Total rows: ", rows_count)
-

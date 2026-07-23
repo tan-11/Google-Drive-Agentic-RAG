@@ -20,7 +20,8 @@ TOOL_DEFINITIONS = [
                 "type": "object",
                 "properties": {
                     "query": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "the query to search for the relavent document chunks, must be a relavent and informative search string."
                     },
                     "k": {
                         "type": "integer",

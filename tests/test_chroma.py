@@ -167,3 +167,30 @@ def test_file_metadata(chroma_db):
     )
 
     assert result["metadatas"][0]["filename"]=="test.pdf"
+
+
+def test_get_chunks_by_ids_returns_metadata(chroma_db):
+    chroma_db.upsert(
+        [
+            "hello world"
+        ],
+        [
+            [0.1, 0.2]
+        ],
+        [
+            {
+                "file_id": "abc",
+                "page_number": 3,
+            }
+        ],
+        [
+            "chunk1"
+        ]
+    )
+
+    result = chroma_db.get_chunks_by_ids(["chunk1"])
+
+    assert len(result) == 1
+    assert result[0]["chunk_id"] == "chunk1"
+    assert result[0]["metadata"]["page_number"] == 3
+    assert result[0]["chunk_text"] == "hello world"

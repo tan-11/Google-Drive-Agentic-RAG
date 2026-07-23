@@ -1,5 +1,7 @@
 ## ====================keyword search========================
-import bm25s 
+import bm25s
+
+from app.db.chroma import Chroma
 from app.db.sqlite import DB
 db_client = DB()
 
@@ -39,7 +41,6 @@ class BM25Retriever:
 
 # ===========================semantic search========================
 import app.rag.embedding as embedding
-from app.db.chroma import Chroma
 from app.config import Settings
 
 def get_top_k_chunks(query, settings : Settings, k=50):
@@ -52,7 +53,16 @@ def get_top_k_chunks(query, settings : Settings, k=50):
 #==========================hybrid search========================
 from app.rag.reranking import Reranker
 
-reranker = Reranker()
+_reranker: Reranker | None = None
+
+
+def _get_reranker() -> Reranker:
+    global _reranker
+
+    if _reranker is None:
+        _reranker = Reranker()
+
+    return _reranker
 
 def rrf(rankings: list[list[str]], k: int = 60) -> list[tuple[str, float]]:
     
@@ -80,28 +90,54 @@ def hybrid_search(query: str, settings : Settings, k:int =20):
     semantic_results = get_top_k_chunks(query, settings=settings)
     #rrf ranking
     rrf_results = rrf([keyword_results['ids'], semantic_results['ids'][0]])
-    # get all chunks text
-    chunks = db_client.get_chunks_by_ids(chunk_ids=[chunk_id for chunk_id, _ in rrf_results])
-   
-    chunk_texts = [chunk['chunk_text'] for chunk in chunks]
-    map_chunk_id_text = {
-        chunk['chunk_text']: (chunk["chunk_id"],chunk['name'], chunk['drive_link'])
-        for chunk in chunks
-        } 
-    
-    #rerank
-    reranked_results = reranker.rerank(query, chunk_texts)
-    
-    result = []
-    for text, _ in reranked_results[:k]:
-        chunk_id, file_name, drive_link = map_chunk_id_text[text]
-        result.append(
-            {
-             "chunk_id": chunk_id,
-             "chunk_text": text, 
-             "file_name": file_name, 
-             "drive_link": drive_link}
-            )
-    
-    return result
+    chunk_ids = [chunk_id for chunk_id, _ in rrf_results]
 
+    file_rows = db_client.get_chunks_by_ids(chunk_ids=chunk_ids)
+    chroma_rows = Chroma().get_chunks_by_ids(chunk_ids=chunk_ids)
+
+    file_by_id = {chunk["chunk_id"]: chunk for chunk in file_rows}
+    metadata_by_id = {
+        chunk["chunk_id"]: chunk.get("metadata", {})
+        for chunk in chroma_rows
+    }
+
+    candidate_chunks = []
+    for chunk_id in chunk_ids:
+        file_row = file_by_id.get(chunk_id)
+        if not file_row:
+            continue
+
+        chunk_text = file_row.get("chunk_text", "")
+        if not chunk_text.strip():
+            continue
+
+        metadata = metadata_by_id.get(chunk_id, {})
+        page_number = metadata.get("page_number")
+
+        candidate_chunks.append(
+            {
+                "chunk_id": chunk_id,
+                "chunk_text": chunk_text,
+                "file_name": file_row["name"],
+                "drive_link": file_row["drive_link"],
+                "page_number": page_number,
+                "section_heading": metadata.get("section_heading"),
+                "sheet_name": metadata.get("sheet_name"),
+            }
+        )
+
+    print("Reranking...")
+    reranked_results = _get_reranker().rerank(query, candidate_chunks)
+    print("Reranking done!")
+    return [
+        {
+            "chunk_id": chunk["chunk_id"],
+            "chunk_text": chunk["chunk_text"],
+            "file_name": chunk["file_name"],
+            "drive_link": chunk["drive_link"],
+            "page_number": chunk.get("page_number"),
+            "section_heading": chunk.get("section_heading"),
+            "sheet_name": chunk.get("sheet_name"),
+        }
+        for chunk in reranked_results[:k]
+    ]

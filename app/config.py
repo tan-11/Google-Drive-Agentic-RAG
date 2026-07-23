@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     tavily_api_key: str = ""
 
     agnes_url: str = "https://apihub.agnes-ai.com/v1"
+    backend_url: str = "http://127.0.0.1:8000"
 
     agnes_model_name: str = "agnes-2.0-flash"
     hf_token: str = ""

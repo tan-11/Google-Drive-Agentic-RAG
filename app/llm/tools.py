@@ -24,6 +24,7 @@ def _drive_search(query: str, k: int = 10) -> dict[str, object]:
         file_name = chunk.get("file_name", "")
         chunk_text = chunk.get("chunk_text", "")
         drive_link = chunk.get("drive_link", "")
+        page_number = chunk.get("page_number")
 
         context_parts.append(
             f"[{chunk_id}] {file_name}\n{chunk_text}\n"
@@ -35,6 +36,7 @@ def _drive_search(query: str, k: int = 10) -> dict[str, object]:
                 "file_name": file_name,
                 "chunk_text": chunk_text,
                 "drive_link": drive_link,
+                "page_number": page_number,
             }
         )
 

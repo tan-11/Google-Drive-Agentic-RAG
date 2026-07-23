@@ -108,28 +108,30 @@ def process_changes(page_token, db_client: DB, chroma_client: Chroma, drive_serv
         for change in changes:
 
             file_id = change["fileId"]
+            file = change.get("file")
 
-            if change.get("removed"):
+            existing_file = db_client.get_file(file_id)
+            if change.get("removed") or (file and file.get("trashed")):
                 delete_file(file_id=file_id, 
                             db_client=db_client, 
                             chroma_client=chroma_client)
                 print("Deleted file: ", file_id)
 
-            elif not db_client.get_file(file_id):
-                create_file(file=change["file"], 
+            elif not existing_file:
+                create_file(file=file, 
                             drive_service=drive_service, 
                             chroma_client=chroma_client,
                             db_client=db_client,
                             settings=settings)
-                print("Created file: ", change["file"]['name'])
+                print("Created file: ", file['name'])
 
-            else:
-                update_file(change["file"], 
+            elif existing_file[0]['modified_time'] != file.get("modifiedTime"):
+                update_file(file, 
                             db_client=db_client, 
                             chroma_client=chroma_client, 
                             drive_service=drive_service,
                             settings=settings)
-                print("Updated file: ", change["file"]['name'])
+                print("Updated file: ", file['name'])
         # check end
         next_page_token = response.get("nextPageToken")
 

@@ -75,8 +75,9 @@ def hybrid_search(query: str, settings : Settings, k:int =20):
         } 
     
     #rerank
+    print("Reranking...")
     reranked_results = reranker.rerank(query, chunk_texts)
-    
+    print("Done reranking!")
     result = []
     for text, _ in reranked_results[:k]:
         chunk_id, file_name, drive_link = map_chunk_id_text[text]

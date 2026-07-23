@@ -1,9 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from fastapi.responses import StreamingResponse
+from fastapi.responses import RedirectResponse, StreamingResponse
 
 from app.db.sqlite import DB
 from app.domain import QueryIn
+from app.rag.citation import resolve_chunk_citation
 from app.worker import process_query
 from app.llm.agent import Agent
 
@@ -25,3 +26,11 @@ def list_chats():
 def get_chat(chat_id: str):
     return db_client.get_conversation_history(chat_id)  # return ordered messages
 
+
+@app.get("/cite/{chunk_id}")
+def cite_chunk(chunk_id: str):
+    citation = resolve_chunk_citation(chunk_id)
+    if not citation:
+        raise HTTPException(status_code=404, detail="Citation not found.")
+
+    return RedirectResponse(url=str(citation["redirect_url"]), status_code=302)
